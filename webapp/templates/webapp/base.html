@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vane Portfolio</title>
+    <title>Portfolio Vane Manzanelli</title>
     
     <!-- Bootstrap -->
     <link href="{% static 'webapp/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -16,35 +16,27 @@
 
 </head>
 <body >
-    <div class="container">
+   
         <!--header-->
-        {% for dato in datos %}
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">{dato.nombre}{dato.apellido}</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                <a class="nav-link" href="#">Features</a>
-                <a class="nav-link" href="#">Pricing</a>
-                <a class="nav-link disabled">Disabled</a>
-              </div>
+        <div class="container" id='fondo'>
+          <div class="row">
+            <div class="col mt-4">
+              <h1><a href="#">Vanesa Manzanelli</a></h1>
             </div>
+            <div class="col">
+            <div class="row p-5">
+              <a class="col" href="#">Inicio</a>
+              <a class="col" href="#">Portfolio</a>
+              <a class="col" href="#">Sobre mi</a>
+              <a class="col" href="#">Contacto</a>              
+            </div>           
           </div>
-        </nav>
-          {% endfor %}
-          <div class="container">
-            <p style="margin-left: 20px;">Welcome to my Portfolio !</p>
-          </div>
+        </div>
+       
           <!--contenido variable-->
-
          
           {% block content %} {% endblock %}
-         
-
+        
           <!--footer-->
           <div class="container">
             <div class="text-center ">
