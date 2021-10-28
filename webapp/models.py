@@ -9,5 +9,5 @@ class Persona(models.Model):
     about_me = models.TextField()
 
     def __str__(self):     
-        fullname = f'{self.nombre} {self.apellido}'       
-        return fullname
+              
+        return self.nombre

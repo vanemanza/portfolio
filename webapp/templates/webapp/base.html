@@ -16,37 +16,46 @@
 
 </head>
 <body >
-   
+   <div class="container" style="height: 750px;">
         <!--header-->
-        <div class="container" id='fondo'>
-          <div class="row">
-            <div class="col mt-4">
-              <h1><a href="#">Vanesa Manzanelli</a></h1>
-            </div>
-            <div class="col">
-            <div class="row p-5">
-              <a class="col" href="#">Inicio</a>
-              <a class="col" href="#">Portfolio</a>
-              <a class="col" href="#">Sobre mi</a>
-              <a class="col" href="#">Contacto</a>              
-            </div>           
+      
+          <div class="container border-bottom border-primary">
+            <div class="row">
+              <div class="col-6 mt-3 pt-4">
+                
+                <h3 style="margin-left: 10px;"><a href="{% url 'index' %}">Vanesa Manzanelli</a></h3>
+                
+              </div>
+              
+              <div class="col">
+                <div class="row pt-5">
+                  <a class="col text-center" href="{% url 'index' %}">Inicio</a>
+                  <a class="col text-center" href="{% url 'portfolio' %}">Proyectos</a>
+                  
+                  <a class="col text-center" href="{% url 'contacto' %}">Contacto</a>              
+                </div> 
+              </div>     
+
+            </div>       
+          </div>
+             
+        <!--contenido variable-->
+         
+        <div class="container bg-blue mt-5" style="height: 450px;">
+          {% block content %} {% endblock %}
+        </div>
+        <!--footer-->
+        <div class="container fixed-bottom">
+          <div class="text-right ">
+              
+              <a href="https://www.linkedin.com/in/vanesa-manzanelli-0a38931b4/"><img class="rounded" src="{% static 'webapp/img/linkedin.png' %}" alt="logo linkedin" style="width: 50px;"></a>
+              <a href="https://github.com/vanemanza"><img class="rounded" src="{% static 'webapp/img/github.png' %}" alt="logo github" style="width: 50px;"></a>
+              <a href="https://www.whatsapp.com/"><img class="rounded" src="{% static 'webapp/img/wsp.png' %}" alt="logo wsp" style="width: 55px;"></a>
+              
           </div>
         </div>
-       
-          <!--contenido variable-->
-         
-          {% block content %} {% endblock %}
-        
-          <!--footer-->
-          <div class="container">
-            <div class="text-center ">
-              
-                <a href="#"><img class="rounded" src="{% static 'webapp/img/linkedin.png' %}" alt="logo linkedin" style="width: 50px;"></a>
-                <a href="#"><img class="rounded" src="{% static 'webapp/img/github.png' %}" alt="logo linkedin" style="width: 50px;"></a>
-                <a href="#"><img class="rounded" src="{% static 'webapp/img/mail.png' %}" alt="logo linkedin" style="width: 50px;"></a>
-              
-            </div>
-          </div>
-    </div>       
+
+    </div>  
+      
 </body>
 </html>
