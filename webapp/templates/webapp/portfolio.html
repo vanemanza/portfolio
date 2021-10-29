@@ -4,7 +4,7 @@
 
 {% block content %} 
 
-<div class="row">
+<div class="row bg-primary rounded" style="align-content: space-between; ">
 {% for dato in datos %}
   <div class="card m-3" style="width: 18rem;">
     <div class="card-header">
@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-    <img src={{dato.imagen}} class="card-img-top" alt="...">
+    <img src={{dato.imagen.url}} class="card-img-top" alt="..." style="width: 100%;">
     <div class="card-body">
       <p class="card-text">{{dato.detalle}}</p>
     </div>
