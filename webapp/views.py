@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from . models import Persona
+from proyectos.models import Proyecto
 from contacto.forms import FormularioContacto
 from django.core.mail import EmailMessage
 
@@ -17,7 +18,9 @@ def about(request):
     return render(request, 'webapp/about.html', {})    
 
 def portfolio(request):
-    return render(request, 'webapp/portfolio.html', {})    
+    datos = Proyecto.objects.all()
+    contexto = {'datos': datos}
+    return render(request, 'webapp/portfolio.html', contexto)    
    
 def contacto(request):
     

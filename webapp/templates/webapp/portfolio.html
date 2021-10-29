@@ -3,5 +3,30 @@
 {% load static %}
 
 {% block content %} 
-<h1>PORTFOLIO </h1>
+
+<div class="row">
+{% for dato in datos %}
+  <div class="card m-3" style="width: 18rem;">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-7">
+          <h5 class="card-title">{{dato.nombre}}</h5>
+        </div>
+        <div class="col">
+          <a href="{{dato.app_url}}">▶</a>
+        </div>
+        <div class="col">
+          <a href="{{dato.github_url}}"><img class="rounded" src="{% static 'webapp/img/github.png' %}" alt="logo github" style="width: 30px;"></a>
+        </div>
+      </div>
+    </div>
+    <img src={{dato.imagen}} class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">{{dato.detalle}}</p>
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+
 {% endblock %}  
