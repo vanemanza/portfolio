@@ -1,7 +1,22 @@
 from django import forms
 
-class FormularioContacto(forms.Form):
+from webapp.models import Contacto
 
-    nombre = forms.CharField(label="Nombre", required=True)
-    email = forms.CharField(label="Email", required=True)
-    contenido = forms.CharField(label="Contenido", widget=forms.Textarea)
+class FormularioContacto(forms.ModelForm):
+
+    class Meta:
+        model = Contacto
+        fields = '__all__'
+        labels = {
+            'nombre': 'Nombre',
+            'email' : 'Email',
+            'mensaje': 'Mensaje',
+        }
+
+        widgets = {
+            'nombre': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'mensaje': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+

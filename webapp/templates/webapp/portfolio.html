@@ -4,9 +4,9 @@
 
 {% block content %} 
 
-<div class="row bg-primary rounded" style="align-content: space-between; ">
+<div class="row rounded" >
 {% for dato in datos %}
-  <div class="card m-3" style="width: 18rem;">
+  <div class="card m-3 ml-5 border border-warning rounded" style="width: 18rem;">
     <div class="card-header">
       <div class="row">
         <div class="col-7">
@@ -20,7 +20,9 @@
         </div>
       </div>
     </div>
-    <img src={{dato.imagen.url}} class="card-img-top" alt="..." style="width: 100%;">
+    <div class="m-2">
+      <img src={{dato.imagen.url}} class="card-img-top m-2" alt="..." style="width: 95%;">
+    </div>
     <div class="card-body">
       <p class="card-text">{{dato.detalle}}</p>
     </div>

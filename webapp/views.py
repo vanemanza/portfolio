@@ -24,11 +24,11 @@ def portfolio(request):
    
 def contacto(request):
     
-    formulario_contacto = FormularioContacto()
+    form = FormularioContacto()
 
     if request.method == 'POST':
-        formulario_contacto = FormularioContacto(data=request.POST)
-        if formulario_contacto.is_valid():
+        form = FormularioContacto(data=request.POST)
+        if form.is_valid():
             nombre= request.POST.get("nombre")
             email= request.POST.get("email")
             contenido= request.POST.get("contenido")
@@ -40,6 +40,5 @@ def contacto(request):
                 return redirect("/contacto/?valido")
             except:
                 return redirect("/contacto/?novalido")    
-
-    return render(request, 'webapp/contacto.html', {'miFormulario': formulario_contacto})    
-   
+             
+    return render(request, 'webapp/contacto.html', {'form': form})

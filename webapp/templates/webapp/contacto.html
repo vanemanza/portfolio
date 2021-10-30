@@ -4,17 +4,22 @@
 
 {% block content %} 
 
- <div class="contenedorFormulario bg-primary rounded">
-
-   {% if "valido" in request.GET %} 
-      <div style="margin:auto; background: gray; color: green; width: 50%; border-radius: 5px;"><p style="text-align:center; color: white; padding: 5px;">Información enviada correctamente</p></div>
+ <div class="contenedorFormulario "> 
+   
+   <form action="" method="POST" style="text-align: left;">
+   {% csrf_token %} 
+   <p style="padding: 10px; margin: 10px auto;">{{form.as_p}}</p>
+   <input type="submit" class="btn btn-dark" value="Enviar" style="width: 150px;"/>
+  </form>
+  <br>
+  {% if "valido" in request.GET %} 
+   <div class="row  m-3" >
+     <p class="col-4 "></p>
+     <p class="col-4 bg-success text-white  rounded text-center p-3" style="text-align: center; font-size: 15px;">Información enviada correctamente</p>
+    <p class="col-4 "></p>
+    </div>
    {% endif %}   
-    <form action="" method="POST" >
-      {% csrf_token %} 
-      <table style=" padding: 15px; margin: 20px auto;">{{miFormulario.as_table}}</table>
-      <input type="submit" class="center" value="Enviar" style="width: 150px; text-align: center;"/>
-   </form>
  </div>
 
-    {% endblock %}  
+{% endblock %}  
 
