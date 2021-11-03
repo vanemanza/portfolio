@@ -128,8 +128,11 @@ STATIC_URL = '/static/'
 #especifico la url publica con el nombre de la carpeta donde guardare las img
 MEDIA_URL = '/media/'
 
+"""
 # le digo donde tiene q ir a buscar los archivos multimedia
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# por qué lo escribí dos veces ? 
+"""
 
 # le digo donde tiene q ir a buscar los archivos multimedia
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
