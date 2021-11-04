@@ -3,16 +3,15 @@
 {% load static %}
 
 {% block content %} 
+  
 
-
-    <div class="row" >
-        <div class="col-5" >
-            {% for dato in datos %}
-            <img src={{dato.foto.url}} style="width: 350px; height:350px; " class="mt-5 ml-5 rounded-circle">
-           
+    <div class="row gy-2 "  >
+        {% for dato in datos %}
+        <div class="col-8 col-md-4 p-sm-5" >   
+            <img src={{dato.foto.url}}  class="img-fluid rounded float-sm-center p-3 border border-success bg-light">           
         </div>
-        <div class="col-7 ">
-            <p class="rounded border border-warning p-5 mt-5 mr-2 " style="height: 95%;">{{dato.about_me}}</p>
+        <div class="col-md-8 ">
+            <p class="rounded border border-warning p-5 mt-5 mr-2 " >{{dato.about_me}}</p>
         </div>
         {% endfor %}
     </div>

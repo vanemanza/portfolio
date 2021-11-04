@@ -4,12 +4,14 @@
 
 {% block content %} 
 
- <div class="contenedorFormulario "> 
+ <div class="container-sm "> 
+
+  <div class="col" style="height: 95%;">
    
    <form action="" method="POST" style="text-align: left;">
    {% csrf_token %} 
    <p style="padding: 10px; margin: 10px auto;">{{form.as_p}}</p>
-   <input type="submit" class="btn btn-dark" value="Enviar" style="width: 150px;"/>
+   <input type="submit" class="btn btn-dark " value="Enviar" style="width: 150px; "/>
   </form>
   <br>
   {% if "valido" in request.GET %} 
@@ -20,6 +22,6 @@
     </div>
    {% endif %}   
  </div>
-
+</div>
 {% endblock %}  
 

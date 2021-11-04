@@ -16,7 +16,7 @@
 
 </head>
 <body >
-   <div class="container" style="height: 750px;">
+   <div class="container" >
         <!--header-->
       
           <div class="container border-bottom border-dark ">
@@ -39,14 +39,14 @@
              
         <!--contenido variable-->
          
-        <div class="container  mt-3 border border-danger rounded" style="height: 500px;">
+        <div class="container  mt-3 border border-danger rounded" >
           {% block content %} {% endblock %}
         </div>
         <!--footer-->
-        <div class="container border-top border-dark fixed-bottom">
+        <div class="container border-top border-dark mt-2">
           <div class="row text-right pt-2 ">
-              <footer class="col text-dark text-left">Hecho por ®Mi :) - Octubre - 2021</footer>
-              <div class="col">
+              <footer class="col-sm text-dark text-left">Hecho por ®Mi :) - Octubre - 2021</footer>
+              <div class="col-sm">
               <a href="https://www.linkedin.com/in/vanesa-manzanelli-0a38931b4/" class='text-dark'><img class="rounded" src="{% static 'webapp/img/linkedin.png' %}" alt="logo linkedin" style="width: 40px;"></a>
               <a href="https://github.com/vanemanza" class='text-dark'><img class="rounded" src="{% static 'webapp/img/github.png' %}" alt="logo github" style="width: 40px;"></a>
               <a href="https://www.whatsapp.com/" class='text-dark'><img class="rounded" src="{% static 'webapp/img/wsp.png' %}" alt="logo wsp" style="width: 45px;"></a>
