@@ -9,11 +9,12 @@
         <div class="col-5" >
             {% for dato in datos %}
             <img src={{dato.foto.url}} style="width: 350px; height:350px; " class="mt-5 ml-5 rounded-circle">
-            {% endfor %}
+           
         </div>
         <div class="col-7 ">
-            <p class="text-black rounded border border-warning p-5 mt-5">{{dato.about_me}}</p>
+            <p class="rounded border border-warning p-5 mt-5 mr-2 " style="height: 95%;">{{dato.about_me}}</p>
         </div>
+        {% endfor %}
     </div>
 
 
