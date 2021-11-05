@@ -14,9 +14,6 @@ def index(request):
     context = {'datos': datos}
     return render(request, 'webapp/index.html',context)
 
-def about(request):
-    return render(request, 'webapp/about.html', {})    
-
 def portfolio(request):
     datos = Proyecto.objects.all()
     contexto = {'datos': datos}
