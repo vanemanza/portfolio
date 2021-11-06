@@ -37,23 +37,21 @@
                       
         <!--contenido variable-->
         
-        <div class="container border border-danger rounded" >
-          <div class="row">           
-            <div class="col-8">
-              {% block content %} {% endblock %}
-            </div>
-          </div>
+        <div class="container border border-danger  rounded" >             
+            
+              {% block content %} {% endblock %}          
+        
         </div>
         <!--footer-->
-        <div class="col-sm d-sm-flex justify-content-sm-between mt-sm-2">
+        <div class="col-sm d-sm-flex justify-content-sm-between mt-sm-2 p-sm-1">
             {% for dato in datos %}
              
             <p>Hecho por ®Mi - Octubre - 2021 - <a href="{% url 'contacto' %}"><span> {{dato.email}}  </span></a> </p>
             
             <div class="row">
               <a href="https://api.whatsapp.com/send?phone=543512682233" ><img class="mt-sm-1" src="{% static 'webapp/img/wsp.png' %}" alt="logo wsp" style="width: 45px;"></a>
-              <a href="#" ><img class="rounded" src="{% static 'webapp/img/cv.png' %}" alt="logo cv" style="width: 45px;"></a>
-              <a href="https://www.linkedin.com/in/vanesa-manzanelli-0a38931b4/" ><img class="mt-sm-1" src="{% static 'webapp/img/linkedin.png' %}" alt="logo linkedin" style="width: 40px;"></a>
+              <a href="{% static 'webapp/documentos/CV_foto.docx' %}" ><img class="rounded" src="{% static 'webapp/img/cv.png' %}" alt="logo cv" style="width: 50px;"></a>
+              <a href="https://www.linkedin.com/in/vanesa-manzanelli-0a38931b4/" ><img class="mt-sm-1 pt-sm-1" src="{% static 'webapp/img/linkedin.png' %}" alt="logo linkedin" style="width: 40px;"></a>
             </div>
             {% endfor %}
         

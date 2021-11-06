@@ -21,7 +21,8 @@ def portfolio(request):
     return render(request, 'webapp/portfolio.html', contexto)    
    
 def contacto(request):
-    
+    datos = Persona.objects.all()
+    proyectos = Proyecto.objects.all()
     form = FormularioContacto()
 
     if request.method == 'POST':
@@ -39,4 +40,4 @@ def contacto(request):
             except:
                 return redirect("/contacto/?novalido")    
              
-    return render(request, 'webapp/contacto.html', {'form': form})
+    return render(request, 'webapp/contacto.html', {'form': form, 'proyectos': proyectos, 'datos': datos})

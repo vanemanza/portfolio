@@ -4,24 +4,19 @@
 
 {% block content %} 
 
- <div class="container-sm "> 
+ <div class="container m-sm-3 "> 
 
-  <div class="col" style="height: 95%;">
-   
-   <form action="" method="POST" style="text-align: left;">
+  <div class="col" >   
+    {% if "valido" in request.GET %}   
+  <a href="{% url 'index' %}" class="col bg-success text-white  rounded text-center m-sm-1 p-sm-2 " style="text-align: center; font-size: 15px;">Información enviada correctamente - Volver al Inicio</a>
+  {% endif %}   
+   <form action="" method="POST" >
    {% csrf_token %} 
-   <p style="padding: 10px; margin: 10px auto;">{{form.as_p}}</p>
-   <input type="submit" class="btn btn-dark " value="Enviar" style="width: 150px; "/>
-  </form>
-  <br>
-  {% if "valido" in request.GET %} 
-   <div class="row  m-3" >
-     <p class="col-4 "></p>
-     <p class="col-4 bg-success text-white  rounded text-center p-3" style="text-align: center; font-size: 15px;">Información enviada correctamente</p>
-    <p class="col-4 "></p>
-    </div>
-   {% endif %}   
- </div>
+   <p class="p-sm-2 m-sm-2">{{form.as_p}}</p>
+   <input type="submit" class="btn btn-outline-success" value="Enviar" />
+   </form>   
+  </div>
+
 </div>
 {% endblock %}  
 

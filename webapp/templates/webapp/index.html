@@ -4,17 +4,26 @@
 
 {% block content %} 
   
-
-    <div class="row gy-2 "  >
-        {% for dato in datos %}
-        <div class="col-8 col-md-4 p-sm-5" >   
-            <img src={{dato.foto.url}}  class="img-fluid rounded float-sm-center p-3 border border-success bg-light">           
-        </div>
-        <div class="col-md-8 ">
+    <div class="row d-md-flex justify-content-sm-around">
+    {% for dato in datos %}
+        <div class="col-md-4 align-self-center" >   
+            <img src={{dato.foto.url}}  class="img-fluid rounded border border-success bg-light m-sm-3 p-sm-3">           
+        </div>   
+        <div class="col-md-7 align-self-center">
             <p class="rounded border border-warning p-5 mt-5 mr-2 " >{{dato.about_me}}</p>
         </div>
-        {% endfor %}
+    {% endfor %}    
+    </div>    
+    <div class="row-sm-6 d-md-flex justify-content-sm-end m-sm-3 p-sm-3 gx-5">
+        <img src="{% static './webapp/img/python.jfif' %}" style="height: 60px;" class="pl-2">
+        <img src="{% static './webapp/img/django.png' %}" style="height: 60px;" class="pl-2">
+        <img src="{% static './webapp/img/html.png' %}" style="height: 55px;" class="pl-2">
+        <img src="{% static './webapp/img/css.png' %}" style="height: 55px;"  class="pt-sm-1 pl-2">
+        <img src="{% static './webapp/img/Bootstrap.png' %}" style="height: 50px;" class="pl-2 pt-1 mt-sm-1">
     </div>
+   
+
+
 
 
 {% endblock %}  
