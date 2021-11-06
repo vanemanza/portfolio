@@ -25,10 +25,13 @@
           {% for dato in datos %}
           <div class="col-sm d-sm-flex justify-content-sm-between">                            
             <h3 class="mt-sm-2 mb-sm-2 p-sm-2 fst-italic fw-bolder" ><a href="{% url 'index' %}"  >{{dato.nombre}} {{dato.apellido}}</a> </h3>     
-            <h5 class=" mt-sm-3 mb-sm-2 p-sm-2 " ><a class="mt-sm-2 mb-sm-2 p-sm-2" href="{% url 'portfolio' %}" >Mis Proyectos</a>  </h5>                
-            <a href="https://github.com/vanemanza" ><img class="mt-sm-3 mb-sm-2" src="{% static 'webapp/img/github.png' %}" alt="logo cv" style="width: 45px;"></a>
-               
-          </div> 
+                    
+            <div class="col-sm d-sm-flex justify-content-sm-end">              
+              <h5 class=" mt-sm-3 mb-sm-2 p-sm-2 " ><a class="mt-sm-2 mb-sm-2 p-sm-2" href="{% url 'portfolio' %}" >Mis Proyectos</a>  </h5>                
+              <a href="https://github.com/vanemanza" ><img class="mt-sm-3 mb-sm-2" src="{% static 'webapp/img/github.png' %}" alt="logo cv" style="width: 45px;"></a>
+            </div>     
+         
+          </div>  
           {% endfor %}
         </div>       
                       
