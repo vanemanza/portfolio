@@ -5,26 +5,26 @@
 {% block content %} 
 
 <div class="row rounded" >
-{% for dato in datos %}
+{% for proyecto in proyectos %}
   <div class="card m-3 ml-5 border border-warning rounded" style="width: 18rem;">
     <div class="card-header">
       <div class="row">
         <div class="col-7">
-          <h5 class="card-title">{{dato.nombre}}</h5>
+          <h5 class="card-title">{{proyecto.nombre}}</h5>
         </div>
         <div class="col-2">
-          <p style="font-size: 20px; text-align: end;"><a href="{{dato.app_url}}" >▶</a></p>
+          <p style="font-size: 20px; text-align: end;"><a href="{{proyecto.app_url}}" >▶</a></p>
         </div>
         <div class="col-2">
-          <a href="{{dato.github_url}}"><img class="rounded" src="{% static 'webapp/img/github.png' %}" alt="logo github" style="width: 30px;"></a>
+          <a href="{{proyecto.github_url}}"><img class="rounded" src="{% static 'webapp/img/github.png' %}" alt="logo github" style="width: 30px;"></a>
         </div>
       </div>
     </div>
     <div class="m-2">
-      <img src={{dato.imagen.url}} class="card-img-top m-2" alt="..." style="width: 95%;">
+      <img src={{proyecto.imagen.url}} class="card-img-top m-2" alt="..." style="width: 95%;">
     </div>
     <div class="card-body">
-      <p class="card-text">{{dato.detalle}}</p>
+      <p class="card-text">{{proyecto.detalle}}</p>
     </div>
   </div>
 {% endfor %}

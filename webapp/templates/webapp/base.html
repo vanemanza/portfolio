@@ -18,40 +18,48 @@
 <body >
    <div class="container" >
         <!--header-->
-      
-          <div class="container border-bottom border-dark ">
-            <div class="row">
-              <div class="col-6 mt-3 pt-4">
-                {% for dato in datos %}
-                <h3 style="margin-left: 10px; text-decoration: none;"><a href="{% url 'index' %}" class='text-dark' >{{dato.nombre}}</a></h3>
-                {% endfor %}
-              </div>
-              
-              <div class="col">
-                <div class="row pt-5">
-                  <!--a class="col text-center text-dark" href="{% url 'index' %}" >Inicio</a-->
-                  <a class="col text-center text-dark" href="{% url 'portfolio' %}">Mis Proyectos</a>                  
-                  <!--a class="col text-center text-dark" href="{% url 'contacto' %}">Contacto</a-->              
-                </div> 
-              </div>    
-            </div>       
-          </div>
+
+        <!--row inicio-->
+        <div class="row ">
+
+          {% for dato in datos %}
+          <div class="col-sm d-sm-flex justify-content-sm-around">                            
+            <h3 class="mt-sm-2 mb-sm-2 p-sm-2 fst-italic fw-bolder" ><a href="{% url 'index' %}"  >{{dato.nombre}} {{dato.apellido}}</a> </h3>     
+            <h5 class=" mt-sm-2 mb-sm-2 p-sm-2 " ><a class="mt-sm-2 mb-sm-2 p-sm-2" href="{% url 'portfolio' %}" >Mis Proyectos</a>  </h5>                
+            <a href="https://github.com/vanemanza" ><img class="rounded" src="{% static 'webapp/img/github.png' %}" alt="logo cv" style="width: 45px;"></a>
+               
+          </div> 
+          {% endfor %}
+
+        </div>       
+         
              
         <!--contenido variable-->
-         
-        <div class="container  mt-3 border border-danger rounded" >
+        
+        <div class="container border border-danger rounded" >
+          <div class="row">
+           
+        <div class="col-8">
           {% block content %} {% endblock %}
+        </div>
+   
+          </div>
         </div>
         <!--footer-->
         <div class="container border-top border-dark mt-2">
-          <div class="row text-right pt-2 ">
-              <footer class="col-sm text-dark text-left">Hecho por ®Mi :) - Octubre - 2021</footer>
-              <div class="col-sm">
-              <a href="https://www.linkedin.com/in/vanesa-manzanelli-0a38931b4/" class='text-dark'><img class="rounded" src="{% static 'webapp/img/linkedin.png' %}" alt="logo linkedin" style="width: 40px;"></a>
-              <a href="https://github.com/vanemanza" class='text-dark'><img class="rounded" src="{% static 'webapp/img/github.png' %}" alt="logo github" style="width: 40px;"></a>
-              <a href="https://www.whatsapp.com/" class='text-dark'><img class="rounded" src="{% static 'webapp/img/wsp.png' %}" alt="logo wsp" style="width: 45px;"></a>
-              <a href="{% url 'contacto' %}" class='text-dark'><img class="rounded" src="{% static 'webapp/img/mail.png' %}" alt="logo mail" style="width: 40px;"></a>
-              </div>
+          <div class="row pt-2 ">
+            {% for dato in datos %}
+             
+
+                <p>Hecho por ®Mi :) - Octubre - 2021 </p>
+                <a href="{% url 'contacto' %}">&nbsp; &nbsp;&nbsp;{{dato.email}}</a>
+               <a href="https://api.whatsapp.com/send?phone=543512682233" ><img class="rounded" src="{% static 'webapp/img/wsp.png' %}" alt="logo wsp" style="width: 45px;"></a>
+                <a href="#" ><img class="rounded" src="{% static 'webapp/img/cv.png' %}" alt="logo cv" style="width: 45px;"></a>
+                  <a href="https://www.linkedin.com/in/vanesa-manzanelli-0a38931b4/" ><img class="rounded" src="{% static 'webapp/img/linkedin.png' %}" alt="logo linkedin" style="width: 40px;"></a>
+                
+ 
+             
+             {% endfor %}
           </div>
         </div>
 

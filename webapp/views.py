@@ -15,8 +15,9 @@ def index(request):
     return render(request, 'webapp/index.html',context)
 
 def portfolio(request):
-    datos = Proyecto.objects.all()
-    contexto = {'datos': datos}
+    datos = Persona.objects.all()
+    proyectos = Proyecto.objects.all()
+    contexto = {'proyectos': proyectos, 'datos': datos}
     return render(request, 'webapp/portfolio.html', contexto)    
    
 def contacto(request):
