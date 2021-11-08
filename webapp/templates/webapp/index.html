@@ -4,23 +4,31 @@
 
 {% block content %} 
   
-    <div class="row d-md-flex justify-content-sm-around">
-    {% for dato in datos %}
-        <div class="col-md-4 align-self-center" >   
-            <img src={{dato.foto.url}}  class="img-fluid rounded border border-success bg-light m-sm-3 p-sm-4">           
-        </div>   
-        <div class="col-md-7 align-self-center">
-            <p class="rounded border border-warning p-5 mt-5 mr-2 " style="text-align: justify;">{{dato.about_me}}</p>
+    <div class="row d-md-flex justify-content-sm-center border border-warning rounded mt-sm-3">
+    {% for dato in datos %}     
+        <div class="col align-self-center ">
+
+            <h3 class=" p-3 mt-2 mr-2 ">Welcome!</h3>
+
+            <p class=" p-3 mt-2 mr-2 " style="text-align: justify;">{{dato.about_me}}</p>
+        
+            <div class="d-md-flex justify-content-sm-end m-sm-3 p-sm-3 gx-5" style="height: 60px;">
+                <img src="{% static './webapp/img/python.svg' %}"  class="pl-2">
+                <img src="{% static './webapp/img/django-icon.svg' %}"  class=" pl-2">
+                <img src="{% static './webapp/img/html-5.svg' %}"  class=" pl-2">
+                <img src="{% static './webapp/img/css-3_official.svg' %}"  class=" pt-sm-1 pl-2">
+                <img src="{% static './webapp/img/bootstrap.svg' %}"  class="pl-2 pt-1 mt-sm-1">
+            </div>
         </div>
     {% endfor %}    
-    </div>    
-    <div class="row-sm-6 d-md-flex justify-content-sm-end m-sm-3 p-sm-3 gx-5">
-        <img src="{% static './webapp/img/python.jfif' %}" style="height: 60px;" class="pl-2">
-        <img src="{% static './webapp/img/django.png' %}" style="height: 60px;" class="pl-2">
-        <img src="{% static './webapp/img/html.png' %}" style="height: 55px;" class="pl-2">
-        <img src="{% static './webapp/img/css.png' %}" style="height: 55px;"  class="pt-sm-1 pl-2">
-        <img src="{% static './webapp/img/Bootstrap.png' %}" style="height: 50px;" class="pl-2 pt-1 mt-sm-1">
-    </div>
+    
+
+
+
+</div>    
+    
+    
+   
    
 
 

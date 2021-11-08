@@ -16,45 +16,43 @@
 
 </head>
 <body >
-   <div class="container" >
+   <div class="container w-75" >
         <!--header-->
 
         <!--row inicio-->
-        <div class="row-sm">
+        
 
           {% for dato in datos %}
-          <div class="col-sm d-sm-flex justify-content-sm-between">                            
-            <h3 class="mt-sm-2 mb-sm-2 p-sm-2 fst-italic fw-bolder" ><a href="{% url 'index' %}"  >{{dato.nombre}} {{dato.apellido}}</a> </h3>     
-                    
-            <div class="col-sm d-sm-flex justify-content-sm-end">              
-              <h5 class=" mt-sm-3 mb-sm-2 p-sm-2 " ><a class="mt-sm-2 mb-sm-2 p-sm-2" href="{% url 'portfolio' %}" >Mis Proyectos</a>  </h5>                
-              <a href="https://github.com/vanemanza" ><img class="mt-sm-3 mb-sm-2" src="{% static 'webapp/img/github.png' %}" alt="logo cv" style="width: 45px;"></a>
-            </div>     
+          <div class="row-sm d-sm-flex justify-content-sm-around">                            
+            <h3 class="mt-sm-2 mb-sm-2 p-sm-2 pt-sm-4 fst-italic fw-bolder text-dark" >{{dato.nombre}} {{dato.apellido}}</h3>     
          
+              <ul class="navbar-nav me-auto mt-sm-3 mr-5 pt-sm-3 navbar-nav-scroll flex-sm-row text-dark font-weight-bold" style="--bs-scroll-height: 100px; margin-left: auto;">
+                <li class="nav-item  px-lg-4">
+                  <a class="text-dark nav-link text-uppercase text-expanded {% if request.path == '/' %}active{% endif %}" href="{% url 'index' %}">Home</a>
+                </li>
+                <li class="nav-item  px-lg-4">
+                  <a class="text-dark nav-link text-uppercase text-expanded {% if request.path == 'portfolio/' %}active{% endif %}" href="{% url 'portfolio' %}">Projects</a>
+                </li>
+              </ul>               
+             
           </div>  
           {% endfor %}
-        </div>       
+        
                       
         <!--contenido variable-->
         
-        <div class="container border border-danger  rounded" >             
+        <div class="container" >             
             
               {% block content %} {% endblock %}          
         
         </div>
         <!--footer-->
-        <div class="col-sm d-sm-flex justify-content-sm-between mt-sm-2 p-sm-1">
-            {% for dato in datos %}
-             
-            <p>Hecho por ®Mi - Octubre - 2021 - <a href="{% url 'contacto' %}"><span> {{dato.email}}  </span></a> </p>
-            
-            <div class="row">
-              <a href="https://api.whatsapp.com/send?phone=543512682233" ><img class="mt-sm-1" src="{% static 'webapp/img/wsp.png' %}" alt="logo wsp" style="width: 45px;"></a>
-              <a href="{% static 'webapp/documentos/cv_noviembre.pdf' %}" ><img class="rounded" src="{% static 'webapp/img/cv.png' %}" alt="logo cv" style="width: 50px;"></a>
-              <a href="https://www.linkedin.com/in/vanesa-manzanelli-0a38931b4/" ><img class="mt-sm-1 pt-sm-1" src="{% static 'webapp/img/linkedin.png' %}" alt="logo linkedin" style="width: 40px;"></a>
-            </div>
-            {% endfor %}
-        
+        <div class="col-sm mt-sm-5 " style="height: 250px; text-align: center;">
+
+              <a href="https://github.com/vanemanza" ><img class="mt-sm-1 mx-sm-5" src="{% static 'webapp/img/github-icon.svg' %}" alt="logo linkedin" style="height: 15%;"></a>
+               <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=vanemanza1@gmail.com"><img class="mt-sm-1 mx-sm-5" src="{% static 'webapp/img/google-gmail.svg' %}" style="height: 15%;"/></a>
+               <a href="https://www.linkedin.com/in/vanesa-manzanelli-0a38931b4/" ><img class="mt-sm-1 mx-sm-5 " src="{% static 'webapp/img/linkedin-icon.svg' %}" alt="logo linkedin" style="height: 15%;"></a>
+                   
         </div>
 
     </div>  
