@@ -5,22 +5,26 @@
 {% block content %} 
   
     <div class="row d-md-flex justify-content-sm-center border border-warning rounded mt-sm-3">
-    {% for dato in datos %}     
+    
         <div class="col align-self-center ">
 
             <h3 class=" p-3 mt-2 mr-2 ">Welcome!</h3>
 
-            <p class=" p-3 mt-2 mr-2 " style="text-align: justify;">{{dato.about_me}}</p>
+            <p class=" p-1 px-3" style="text-align: justify;">Hola, soy Vanesa. Soy desarrolladora web autodidacta.</p>
+            <p class=" p-1 px-3" style="text-align: justify;">Soy una persona curiosa, me gustan los desafíos y aprender cosas nuevas, por ese motivo durante la pandemia, comencé a estudiar Programación.</p>
+            <p class=" p-1 px-3" style="text-align: justify;">Realicé varios cursos, entre ellos "Python for Everybody", "Curso de Python de Píldoras Informáticas" y "Programación en Python de la Universidad de San Martín". </p>
+            <p class=" p-1 px-3" style="text-align: justify;">Estoy mejorando continuamente mis habilidades y me encantaría formar parte de un esquipo de trabajo, para adquirir experiencia, aportar mis valores y conocimientos y continuar aprendiendo.</p>
+           
         
             <div class="d-md-flex justify-content-sm-end m-sm-3 p-sm-3 gx-5" style="height: 60px;">
                 <img src="{% static './webapp/img/python.svg' %}"  class="pl-2">
                 <img src="{% static './webapp/img/django-icon.svg' %}"  class=" pl-2">
                 <img src="{% static './webapp/img/html-5.svg' %}"  class=" pl-2">
                 <img src="{% static './webapp/img/css-3_official.svg' %}"  class=" pt-sm-1 pl-2">
-                <img src="{% static './webapp/img/bootstrap.svg' %}"  class="pl-2 pt-1 mt-sm-1">
+                <img src="{% static './webapp/img/bootstrap.svg' %}"  class="pl-2 ">
             </div>
         </div>
-    {% endfor %}    
+   
     
 
 
